@@ -1,10 +1,12 @@
 import express from 'express';
 import productRouter from "./src/routes/products/productRoutes.js"; 
+import categoryRouter from "./src/routes/category/categoryRoutes.js"; 
 
 const app = express();
 app.use(express.json());
 
 app.use('/products', productRouter); 
+app.use('/categories', categoryRouter); 
 
 app.get('/status', (req, res) => {
   try {
